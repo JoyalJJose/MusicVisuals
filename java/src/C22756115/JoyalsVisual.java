@@ -10,12 +10,15 @@ public class JoyalsVisual extends ie.tudublin.Visual {
 
     public void setup()
     {
-
+        startMinim();
+        // loadAudio("Am I Dreaming of Sunflowers Mashup.mp3");
+        loadAudio("Am I Dreaming.mp3");
+        playAudio();
     }
 
     public void draw()
     {
 
     }
-    
+
 }

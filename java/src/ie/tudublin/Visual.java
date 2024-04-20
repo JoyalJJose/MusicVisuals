@@ -91,6 +91,11 @@ public abstract class Visual extends PApplet
 		ab = ap.mix;
 	}
 
+	public void playAudio()
+	{
+		ap.play();
+	}
+
 	public int getFrameSize() {
 		return frameSize;
 	}
