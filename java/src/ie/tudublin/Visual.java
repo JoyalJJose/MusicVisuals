@@ -6,7 +6,7 @@ import ddf.minim.analysis.FFT;
 
 public abstract class Visual extends PApplet
 {
-	private int frameSize = 512;
+	private int frameSize = 2048;
 	private int sampleRate = 44100;
 
 	private float[] bands;
@@ -21,7 +21,8 @@ public abstract class Visual extends PApplet
 	private float amplitude  = 0;
 	private float smoothedAmplitude = 0;
 
-	
+	private float[] lerpedBuffer;
+
 	
 	public void startMinim() 
 	{
@@ -32,10 +33,17 @@ public abstract class Visual extends PApplet
 		bands = new float[(int) log2(frameSize)];
   		smoothedBands = new float[bands.length];
 
+		lerpedBuffer = new float[2048];
 	}
 
 	float log2(float f) {
 		return log(f) / log(2.0f);
+	}
+
+	public void calculateLerpedBuffer() {
+		for (int i = 0; i < ab.size(); i++) {
+			lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.05f);
+		}
 	}
 
 	protected void calculateFFT() throws VisualException
@@ -136,6 +144,10 @@ public abstract class Visual extends PApplet
 
 	public AudioBuffer getAudioBuffer() {
 		return ab;
+	}
+
+	public float[] getLerpedBuffer() {
+		return lerpedBuffer;
 	}
 
 	public float getAmplitude() {

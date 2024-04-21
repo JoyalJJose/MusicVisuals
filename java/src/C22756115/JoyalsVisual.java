@@ -35,27 +35,27 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         startMinim();
         // loadAudio("Am I Dreaming of Sunflowers Mashup.mp3");
         loadAudio("Am I Dreaming.mp3");
-        
         getAudioPlayer().play();
 
-        // Instanciate visuals
+        // Instantiate visuals
         t = new test(this);
         s0 = new Scene0(this);
     }
 
     public void draw()
     {
+        calculateLerpedBuffer();
+
         if (getAudioPlayer().isPlaying())
         {
             // Switch between scenes based on num input
             switch (scene) {
                 // Scene 0 - test
                 case 0:
-                    t.render();
                     s0.render();
                     break;
                 case 1:
-                    background(0);
+                    t.render();
                     break;
                 case 2:
                     background(0);
