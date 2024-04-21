@@ -5,6 +5,9 @@ public class JoyalsVisual extends ie.tudublin.Visual {
     Scene0 s0;
     Scene1 s1;
     Spider sp;
+    ProgressBar pb;
+
+    int trackLength;
 
     int scene = 0;
     int count = 0;
@@ -13,10 +16,10 @@ public class JoyalsVisual extends ie.tudublin.Visual {
     {
         size(1024, 1000, P3D);
         // Fullscreen & P3D for 3D graphics
-        // fullScreen(P3D, SPAN);
+        // fullScreen(P3D, SPAN); //everything works in fullscreen :)
     }
 
-    // Play/pause/rewind & scene selector
+    // Media controls & scene selector
     public void keyPressed() {
 		if (keyCode == ' ') { // Play/pause
             if (getAudioPlayer().isPlaying()) {
@@ -36,9 +39,24 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                     loadAudio("Spot Holes 2.mp3");
                     break;
             } getAudioPlayer().play();
+            trackLength = getAudioPlayer().length();
         }
         if (key == BACKSPACE) { // Rewind
             getAudioPlayer().rewind();
+        }
+        if (keyCode == LEFT) { // Seek backwards 5s
+            if (getAudioPlayer().position() - 5000 < 0) {
+                getAudioPlayer().cue(0);
+            } else {
+                getAudioPlayer().cue(getAudioPlayer().position() - 5000);
+            }
+        }
+        if (keyCode == RIGHT) { // Seek forwards 5s
+            if (getAudioPlayer().position() + 5000 > trackLength) {
+                getAudioPlayer().cue(trackLength - 750);
+            } else {
+                getAudioPlayer().cue(getAudioPlayer().position() + 5000);
+            }
         }
         if (key >= '0' && key <= '9') { // Scene selection
 			scene = key - '0';
@@ -50,9 +68,12 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         startMinim();
         loadAudio("Am I Dreaming.mp3");
         getAudioPlayer().play();
+        // Get length of loaded file in milliseconds
+        trackLength = getAudioPlayer().length();
 
         // Instantiate visuals
         t = new test(this);
+        pb = new ProgressBar(this);
         s0 = new Scene0(this);
         s1 = new Scene1(this);
         // sp = new Spider(this);
@@ -60,6 +81,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
 
     public void draw()
     {
+        // Lerp AudioBuffer values into lerpedBuffer[]
         calculateLerpedBuffer();
 
         if (getAudioPlayer().isPlaying())
@@ -72,6 +94,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                     break;
                 case 1:
                     s1.render();
+                    pb.render();
                     // sp.render();
                     break;
                 case 2:

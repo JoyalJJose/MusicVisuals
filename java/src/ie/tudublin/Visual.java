@@ -40,6 +40,7 @@ public abstract class Visual extends PApplet
 		return log(f) / log(2.0f);
 	}
 
+	// Method to lerp AudioBuffer values
 	public void calculateLerpedBuffer() {
 		for (int i = 0; i < ab.size(); i++) {
 			lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.005f);
@@ -104,6 +105,7 @@ public abstract class Visual extends PApplet
 		ap.play();
 	}
 
+	// Pause method
 	public void pauseAudio()
 	{
 		ap.pause();
@@ -141,11 +143,11 @@ public abstract class Visual extends PApplet
 		return ai;
 	}
 
-
 	public AudioBuffer getAudioBuffer() {
 		return ab;
 	}
 
+	// Getter for lerpedBuffer
 	public float[] getLerpedBuffer() {
 		return lerpedBuffer;
 	}

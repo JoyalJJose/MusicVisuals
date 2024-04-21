@@ -30,6 +30,7 @@ public class Scene1 {
             float y2 = r2 * jv.sin(angle);
             angle = angle + inc;
             
+            jv.strokeWeight(1);
             jv.line(x1, y1, x2, y2);
 
             jv.noFill();
