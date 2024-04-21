@@ -93,9 +93,9 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                     s0.render();
                     break;
                 case 1:
+                    // sp.render();
                     s1.render();
                     pb.render();
-                    // sp.render();
                     break;
                 case 2:
                     t.render();
