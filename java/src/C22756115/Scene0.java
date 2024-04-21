@@ -1,7 +1,5 @@
 package C22756115;
 
-import processing.core.*;
-
 public class Scene0
 {
     JoyalsVisual jv;
@@ -20,7 +18,7 @@ public class Scene0
         {
             float hue = jv.map(i, 0, jv.getAudioBuffer().size() , 0, 256);
             jv.stroke(hue, 255, 255);
-            jv.line(i, halfH, i, halfH - Math.abs(jv.getLerpedBuffer()[i]) * halfH * 3f);
+            jv.line(i, halfH, i, jv.map(halfH - Math.abs(jv.getLerpedBuffer()[i]) * halfH * 5f, halfH, 0f, halfH, (float)(jv.height*0.15)));
         }
     }
 

@@ -42,7 +42,7 @@ public abstract class Visual extends PApplet
 
 	public void calculateLerpedBuffer() {
 		for (int i = 0; i < ab.size(); i++) {
-			lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.05f);
+			lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.005f);
 		}
 	}
 

@@ -3,6 +3,7 @@ package C22756115;
 public class JoyalsVisual extends ie.tudublin.Visual {
     test t;
     Scene0 s0;
+    Scene1 s1;
 
     int scene = 0;
 
@@ -40,6 +41,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         // Instantiate visuals
         t = new test(this);
         s0 = new Scene0(this);
+        s1 = new Scene1(this);
     }
 
     public void draw()
@@ -55,10 +57,10 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                     s0.render();
                     break;
                 case 1:
-                    t.render();
+                    s1.render();
                     break;
                 case 2:
-                    background(0);
+                    t.render();
                     break;
                 default:
                     background(0);
