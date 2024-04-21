@@ -4,8 +4,10 @@ public class JoyalsVisual extends ie.tudublin.Visual {
     test t;
     Scene0 s0;
     Scene1 s1;
+    Spider sp;
 
     int scene = 0;
+    int count = 0;
 
     public void settings()
     {
@@ -23,7 +25,19 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                 getAudioPlayer().play();
             }
         }
-        if (key == ENTER) { // Rewind
+        if (key == ENTER) { // Change song
+            count = ++count % 2;
+            getAudioPlayer().close();
+            switch (count) {
+                case 0:
+                    loadAudio("Am I Dreaming.mp3");
+                    break;
+                case 1:
+                    loadAudio("Spot Holes 2.mp3");
+                    break;
+            } getAudioPlayer().play();
+        }
+        if (key == BACKSPACE) { // Rewind
             getAudioPlayer().rewind();
         }
         if (key >= '0' && key <= '9') { // Scene selection
@@ -34,7 +48,6 @@ public class JoyalsVisual extends ie.tudublin.Visual {
     public void setup()
     {
         startMinim();
-        // loadAudio("Am I Dreaming of Sunflowers Mashup.mp3");
         loadAudio("Am I Dreaming.mp3");
         getAudioPlayer().play();
 
@@ -42,6 +55,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         t = new test(this);
         s0 = new Scene0(this);
         s1 = new Scene1(this);
+        // sp = new Spider(this);
     }
 
     public void draw()
@@ -58,6 +72,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                     break;
                 case 1:
                     s1.render();
+                    // sp.render();
                     break;
                 case 2:
                     t.render();
