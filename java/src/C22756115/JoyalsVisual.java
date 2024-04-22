@@ -1,11 +1,20 @@
 package C22756115;
 
+import processing.core.PImage;
+
 public class JoyalsVisual extends ie.tudublin.Visual {
+    PImage spot;
+    PImage logo;
+    PImage sDim;
+    // PImage s1w;
+
     test t;
     Scene0 s0;
     Scene1 s1;
     Spider sp;
     ProgressBar pb;
+    Rain rain;
+    Spot spots;
 
     int trackLength;
 
@@ -14,9 +23,9 @@ public class JoyalsVisual extends ie.tudublin.Visual {
 
     public void settings()
     {
-        size(1024, 1000, P3D);
+        // size(1024, 1000, P3D);
         // Fullscreen & P3D for 3D graphics
-        // fullScreen(P3D, SPAN); //everything works in fullscreen :)
+        fullScreen(P3D, SPAN); //everything works in fullscreen :)
     }
 
     // Media controls & scene selector
@@ -76,32 +85,42 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         pb = new ProgressBar(this);
         s0 = new Scene0(this);
         s1 = new Scene1(this);
-        // sp = new Spider(this);
+        sp = new Spider(this);
+        rain = new Rain(this);
+        spots = new Spot(this);
+        spot = loadImage("spot.png");
+        logo = loadImage("logo.png");
+        sDim = loadImage("spottedDimension.png");
+        // s1w = loadImage("scene1.jpeg");
+        imageMode(CENTER);
     }
 
     public void draw()
     {
         // Lerp AudioBuffer values into lerpedBuffer[]
         calculateLerpedBuffer();
+        // Average amplitude calculation
+        calculateAverageAmplitude();
 
         if (getAudioPlayer().isPlaying())
         {
+            setBackgroundColour(0);
+            pb.render();
             // Switch between scenes based on num input
             switch (scene) {
-                // Scene 0 - test
+                // Scene 0 - Logo & Rain
                 case 0:
                     s0.render();
+                    rain.render();
                     break;
+                // Scene 2 - Spot images
                 case 1:
-                    // sp.render();
                     s1.render();
-                    pb.render();
                     break;
                 case 2:
                     t.render();
                     break;
                 default:
-                    background(0);
                     break;
             }
         }

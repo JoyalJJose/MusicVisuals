@@ -22,6 +22,7 @@ public abstract class Visual extends PApplet
 	private float smoothedAmplitude = 0;
 
 	private float[] lerpedBuffer;
+	private int colour;
 
 	
 	public void startMinim() 
@@ -86,6 +87,11 @@ public abstract class Visual extends PApplet
 			bands[i] = average * 5.0f;
 			smoothedBands[i] = lerp(smoothedBands[i], bands[i], 0.05f);
 		}
+	}
+
+	public void setBackgroundColour(int colour) {
+		this.colour = colour;
+		background(colour);
 	}
 
 	public void startListening()
