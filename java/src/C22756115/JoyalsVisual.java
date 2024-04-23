@@ -1,5 +1,6 @@
 package C22756115;
 
+import processing.core.PApplet;
 import processing.core.PImage;
 
 public class JoyalsVisual extends ie.tudublin.Visual {
@@ -7,6 +8,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
     PImage logo;
     PImage sDim;
     // PImage s1w;
+    PImage s2w;
 
     test t;
     Scene0 s0;
@@ -15,6 +17,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
     ProgressBar pb;
     Rain rain;
     Spot spots;
+    Scene2 s2;
 
     int trackLength;
 
@@ -93,6 +96,8 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         sDim = loadImage("spottedDimension.png");
         // s1w = loadImage("scene1.jpeg");
         imageMode(CENTER);
+        s2 = new Scene2(this);
+        s2w = loadImage("scene2.jpeg");
     }
 
     public void draw()
@@ -111,14 +116,17 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                 // Scene 0 - Logo & Rain
                 case 0:
                     s0.render();
-                    rain.render();
                     break;
-                // Scene 2 - Spot images
+                // Scene 2 - pot images
                 case 1:
                     s1.render();
                     break;
                 case 2:
-                    t.render();
+                    // t.render();
+                    s2.render();
+                    if (mousePressed == true) {
+                        s2.addBoidMouse();
+                    }
                     break;
                 default:
                     break;

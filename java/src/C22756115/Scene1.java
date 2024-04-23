@@ -14,6 +14,8 @@ public class Scene1 {
 
     public void render()
     {
+        // jv.blendMode(1);
+
         jv.image(jv.sDim, jv.width/2, jv.height/2, 1920, 1080);
         jv.spots.createSpots(200);
 
