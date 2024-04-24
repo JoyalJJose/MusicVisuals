@@ -19,7 +19,7 @@ public class Scene2 {
 
     public void render()
     {
-        jv.background(0);
+        // jv.background(0);
         jv.image(jv.s2w, jv.width/2, jv.height/2, 1920, 1080);
         jv.colorMode(PApplet.RGB);
         flock.run();

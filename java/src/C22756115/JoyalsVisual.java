@@ -7,10 +7,8 @@ public class JoyalsVisual extends ie.tudublin.Visual {
     PImage spot;
     PImage logo;
     PImage sDim;
-    // PImage s1w;
     PImage s2w;
-
-    test t;
+    
     Scene0 s0;
     Scene1 s1;
     Spider sp;
@@ -18,6 +16,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
     Rain rain;
     Spot spots;
     Scene2 s2;
+    Scene3 s3;
 
     int trackLength;
 
@@ -84,7 +83,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         trackLength = getAudioPlayer().length();
 
         // Instantiate visuals
-        t = new test(this);
+        // t = new test(this);
         pb = new ProgressBar(this);
         s0 = new Scene0(this);
         s1 = new Scene1(this);
@@ -94,10 +93,10 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         spot = loadImage("spot.png");
         logo = loadImage("logo.png");
         sDim = loadImage("spottedDimension.png");
-        // s1w = loadImage("scene1.jpeg");
+        s2w = loadImage("scene2.jpeg");
         imageMode(CENTER);
         s2 = new Scene2(this);
-        s2w = loadImage("scene2.jpeg");
+        s3 = new Scene3(this);
     }
 
     public void draw()
@@ -128,6 +127,8 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                         s2.addBoidMouse();
                     }
                     break;
+                case 3:
+                    s3.render();
                 default:
                     break;
             }
