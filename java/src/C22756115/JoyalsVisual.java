@@ -8,6 +8,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
     PImage logo;
     PImage sDim;
     PImage s2w;
+    PImage splash;
     
     Scene0 s0;
     Scene1 s1;
@@ -22,6 +23,8 @@ public class JoyalsVisual extends ie.tudublin.Visual {
 
     int scene = 0;
     int count = 0;
+
+    boolean splashing;
 
     public void settings()
     {
@@ -94,6 +97,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         logo = loadImage("logo.png");
         sDim = loadImage("spottedDimension.png");
         s2w = loadImage("scene2.jpeg");
+        splash = loadImage("splash.png");
         imageMode(CENTER);
         s2 = new Scene2(this);
         s3 = new Scene3(this);

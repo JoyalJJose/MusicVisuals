@@ -5,18 +5,20 @@ import processing.core.*;
 public class Scene1 {
     JoyalsVisual jv;
     float halfH;
+    Floor f;
 
     public Scene1(JoyalsVisual jv)
     {
         this.jv = jv;
         halfH = this.jv.height / 2;
+        f = new Floor(jv);
     }
 
     public void render()
     {
         // jv.blendMode(1);
-
         jv.image(jv.sDim, jv.width/2, jv.height/2, 1920, 1080);
+        f.render(0);
         jv.spots.createSpots(200);
 
 

@@ -32,7 +32,7 @@ class Rain {
               drops[i].x = jv.random(jv.width);
             } 
             else if (drops[i].onGround()) {
-                // drops[i].splash();
+                drops[i].splash();
             }
         }
     }

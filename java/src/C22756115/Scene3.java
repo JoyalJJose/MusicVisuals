@@ -1,37 +1,30 @@
 package C22756115;
 
+import processing.core.PImage;
+
 public class Scene3 {
     JoyalsVisual jv;
     Floor f;
     Hex hex;
+    PImage s3w;
 
     Scene3 (JoyalsVisual jv)
     {
         this.jv = jv;
         f = new Floor(jv);
         hex = new Hex(jv);
+        s3w = jv.loadImage("scene3v2.jpg");
     }
 
     public void render()
     {
-        for (int i=1000; i>100; i-=200) {
+        float k = jv.map(jv.getSmoothedAmplitude(), 0f, 1f, 0.7f, 1.5f);
+        // jv.image(jv.logo, jv.width/2, jv.height/2, 108*6*k, 192*6*k);
+        jv.image(s3w, jv.width/2, jv.height/3, (float)(1280*2.5*k), (float)(720*2.5*k));
+        for (int i=1000; i>0; i-=50) {
             hex.render(i);
         }
         f.render();
-        // jv.background(0);
-        // jv.strokeWeight(2);
-        // jv.noFill();
-        // // rectMode(CENTER);
-        // jv.translate(jv.width/2, jv.height/2, 0);
-        // for(int i = 0 ; i < jv.getAudioBuffer().size() ; i+=250)
-        // {
-        //     float hue = jv.map(i, 0, jv.getAudioBuffer().size() , 0, 256);
-        //     jv.stroke(hue, 255, 255);
-        //     // lights();
-        //     // sphere(250 + i * smoothedAmplitude);
-        //     jv.box(100 + i * jv.getSmoothedAmplitude() * 4.0f);
-        //     jv.rotate(jv.PI/15);
-        // }
     }
 
 }

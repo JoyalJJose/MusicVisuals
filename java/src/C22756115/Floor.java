@@ -51,6 +51,7 @@ public class Floor extends Visual {
         flying -= jv.getSmoothedAmplitude()/4;
 
         float yoff = flying;
+        jv.translate(0, 30, 100);
         createTerrain(yoff);
         jv.translate(jv.width / 6 + 200, (jv.height / 2) + 15, -400);
         jv.rotateX(PI / 2);
@@ -58,6 +59,30 @@ public class Floor extends Visual {
         jv.fill(0);
         jv.stroke(246, 94, 23);
         jv.strokeWeight(1);
+        drawTerrain();
+        jv.endShape();
+        jv.popMatrix();
+    }
+
+    public void render(int x)
+    {
+        jv.colorMode(RGB);
+        jv.pushMatrix();
+        jv.translate(halfWidth, halfHeight);
+
+        // Waves
+        jv.beginShape();
+        flying -= jv.getSmoothedAmplitude()/4;
+
+        float yoff = flying;
+        jv.translate(0, 300, 50);
+        createTerrain(yoff);
+        jv.translate(jv.width / 6 + 200, (jv.height / 2) + 15, -400);
+        jv.rotateX(PI / 2);
+        jv.translate(-jv.width / 2, -jv.height / 2);
+        jv.noFill();
+        jv.stroke(x);
+        jv.strokeWeight(2);
         drawTerrain();
         jv.endShape();
         jv.popMatrix();

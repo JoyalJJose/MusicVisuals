@@ -10,11 +10,8 @@ public class Hex {
 
     public void render(int size) {
         jv.colorMode(jv.RGB);
-        // jv.fill(255, 101, 29); // Semi-transparent blue fill
-        jv.noFill();
-        // jv.noStroke();
-        jv.stroke(255);
-        jv.strokeWeight(2);
+        jv.stroke(239, 0, 107);
+        jv.strokeWeight(7);
         
         float centerX = jv.width / 2;
         float centerY = jv.height / 2;
@@ -29,6 +26,7 @@ public class Hex {
         jv.rotate(rotationAngle); // Rotate based on amplitude
         jv.beginShape();
 
+        jv.fill(255, 101, 29);
         for(int i = 0; i < 6; i++) {
             // Angle for each vertex
             angle = jv.TWO_PI / 6 * i;
@@ -37,7 +35,17 @@ public class Hex {
             jv.vertex(x, y);
         }
 
-        jv.endShape(jv.CLOSE);  // Close the shape to form a hexagon
-        jv.popMatrix(); // Restore the original transformation matrix
+        jv.noFill();
+        jv.stroke(23, 2, 217);
+        for(int i = 0; i < 6; i++) {
+            // Angle for each vertex
+            angle = jv.TWO_PI / 6 * i;
+            float x = jv.cos(angle) * radius+35;
+            float y = jv.sin(angle) * radius+35;
+            jv.vertex(x, y);
+        }
+
+        jv.endShape(jv.CLOSE);
+        jv.popMatrix();
     }
 }
