@@ -12,8 +12,9 @@ public class Raindrop {
         this.x = x;
         this.y = y;
         this.z = z;
-        speed = jv.random(6, 8);
         length = jv.random(5, 20);
+        // Larger raindrops fall faster
+        speed = (float)(jv.random(6, 8) * (length*0.1));
     }
 
     // Moving raindrop down & drawing it
@@ -27,7 +28,7 @@ public class Raindrop {
 
     // Make splash effect when hitting ground
     public void splash() {
-        jv.image(jv.splash, x, y);
+        jv.image(jv.splash2, x, y, jv.random(50, 75), jv.random(50, 75));
     }
 
     boolean onGround() {

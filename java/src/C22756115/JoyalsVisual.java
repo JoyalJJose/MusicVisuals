@@ -9,6 +9,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
     PImage sDim;
     PImage s2w;
     PImage splash;
+    PImage splash2;
     
     Scene0 s0;
     Scene1 s1;
@@ -74,6 +75,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         }
         if (key >= '0' && key <= '9') { // Scene selection
 			scene = key - '0';
+            scene = scene % 4;
 		}
 	}
 
@@ -98,6 +100,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         sDim = loadImage("spottedDimension.png");
         s2w = loadImage("scene2.jpeg");
         splash = loadImage("splash.png");
+        splash2 = loadImage("splash2.png");
         imageMode(CENTER);
         s2 = new Scene2(this);
         s3 = new Scene3(this);
@@ -120,17 +123,15 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                 case 0:
                     s0.render();
                     break;
-                // Scene 2 - pot images
+                // Scene 1 - Spot images
                 case 1:
                     s1.render();
                     break;
+                // Scene 2 - Boids simulation
                 case 2:
-                    // t.render();
                     s2.render();
-                    if (mousePressed == true) {
-                        s2.addBoidMouse();
-                    }
                     break;
+                // Scene 3 - Floor & hex
                 case 3:
                     s3.render();
                 default:

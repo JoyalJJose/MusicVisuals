@@ -17,11 +17,14 @@ public class Scene1 {
     public void render()
     {
         // jv.blendMode(1);
+        // Background image
         jv.image(jv.sDim, jv.width/2, jv.height/2, 1920, 1080);
+        // Polymorphism with method overloading to render different floor
         f.render(0);
+        // Spot image noise
         jv.spots.createSpots(200);
 
-
+        // Central sphere & circular waveform EQ
         jv.translate(jv.width/2, jv.height/2, 0);
         float r1 = 200;
         float r2;

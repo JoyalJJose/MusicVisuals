@@ -23,9 +23,14 @@ public class Scene2 {
         jv.image(jv.s2w, jv.width/2, jv.height/2, 1920, 1080);
         jv.colorMode(PApplet.RGB);
         flock.run();
+
+        // Add a new boid into the System
+        if (jv.mousePressed == true) {
+            jv.s2.addBoidMouse();
+        }
     }
 
-    // Add a new boid into the System
+    // Create boids at position of mouse
     void addBoidMouse() {
         flock.addBoid(new Boid(jv.mouseX, jv.mouseY, jv));
     }

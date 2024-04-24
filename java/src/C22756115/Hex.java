@@ -21,12 +21,13 @@ public class Hex {
         // Calculate rotation angle based on amplitude
         float rotationAngle = jv.map(jv.getSmoothedAmplitude(), 0, 1, 0, jv.TWO_PI);
 
-        jv.pushMatrix(); // Save the current transformation matrix
-        jv.translate(centerX, centerY); // Translate to the center of the hexagon
-        jv.rotate(rotationAngle); // Rotate based on amplitude
+        jv.pushMatrix();
+        jv.translate(centerX, centerY);
+        // Rotate based on amplitude
+        jv.rotate(rotationAngle);
         jv.beginShape();
 
-        jv.fill(255, 101, 29);
+        // jv.fill(255, 101, 29);
         for(int i = 0; i < 6; i++) {
             // Angle for each vertex
             angle = jv.TWO_PI / 6 * i;
@@ -38,7 +39,6 @@ public class Hex {
         jv.noFill();
         jv.stroke(23, 2, 217);
         for(int i = 0; i < 6; i++) {
-            // Angle for each vertex
             angle = jv.TWO_PI / 6 * i;
             float x = jv.cos(angle) * radius+35;
             float y = jv.sin(angle) * radius+35;

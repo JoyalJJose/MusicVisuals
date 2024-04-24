@@ -50,9 +50,9 @@ public class Floor extends Visual {
         jv.beginShape();
         flying -= jv.getSmoothedAmplitude()/4;
 
-        float yoff = flying;
+        // float yoff = flying;
         jv.translate(0, 30, 100);
-        createTerrain(yoff);
+        createTerrain(flying);
         jv.translate(jv.width / 6 + 200, (jv.height / 2) + 15, -400);
         jv.rotateX(PI / 2);
         jv.translate(-jv.width / 2, -jv.height / 2);

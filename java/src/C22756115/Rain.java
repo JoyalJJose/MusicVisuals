@@ -10,10 +10,10 @@ class Rain {
     Rain(JoyalsVisual jv) {
         this.jv = jv;
         drops = new Raindrop[maxDrops];
-        // drops[0] = new Raindrop(jv, jv.random(jv.width), 0, 0);
     }
 
-    void createRaindrop() {
+    // Create raindrops with random length & position
+    void createRaindrops() {
         if (numDrops < drops.length && jv.random(10) < 1) {
             drops[numDrops] = new Raindrop(jv, jv.random(jv.width), 0, 0);
             numDrops++;
@@ -21,7 +21,8 @@ class Rain {
     }
 
     void render() {
-        createRaindrop();
+        // Create raindrop objects
+        createRaindrops();
 
         for (int i = 0; i < numDrops; i++) {
             drops[i].fall();
