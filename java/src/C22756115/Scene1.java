@@ -4,25 +4,32 @@ import processing.core.*;
 
 public class Scene1 {
     JoyalsVisual jv;
-    float halfH;
+
+    PImage sDim;
+    PImage spot;
+
     Floor f;
+    Rain rain;
+    Spot spots;
 
     public Scene1(JoyalsVisual jv)
     {
         this.jv = jv;
-        halfH = this.jv.height / 2;
+        spots = new Spot(jv);
         f = new Floor(jv);
+        sDim = jv.loadImage("spottedDimension.png");
+        spot = jv.loadImage("spot.png");
     }
 
     public void render()
     {
         // jv.blendMode(1);
         // Background image
-        jv.image(jv.sDim, jv.width/2, jv.height/2, 1920, 1080);
-        // Polymorphism with method overloading to render different floor
+        jv.image(sDim, jv.width/2, jv.height/2, 1920, 1080);
+        // Render terrain map floor
         f.render(0);
         // Spot image noise
-        jv.spots.createSpots(200);
+        spots.createSpots(100);
 
         // Central sphere & circular waveform EQ
         jv.translate(jv.width/2, jv.height/2, 0);
@@ -32,7 +39,7 @@ public class Scene1 {
         float inc = jv.TWO_PI / 360;
 
         for (int i = 0; i < 360; i++) {
-            r2 = r1 + (Math.abs(jv.getLerpedBuffer()[i]) * halfH * 5f);
+            r2 = r1 + (Math.abs(jv.getLerpedBuffer()[i]) * jv.height/2 * 7f);
 
             float x1 = r1 * jv.cos(angle);
             float y1 = r1 * jv.sin(angle);

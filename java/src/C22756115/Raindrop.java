@@ -28,7 +28,7 @@ public class Raindrop {
 
     // Make splash effect when hitting ground
     public void splash() {
-        jv.image(jv.splash2, x, y, jv.random(50, 75), jv.random(50, 75));
+        jv.image(jv.splash, x, y, jv.random(50, 75), jv.random(50, 75));
     }
 
     boolean onGround() {

@@ -27,7 +27,7 @@ public class Hex {
         jv.rotate(rotationAngle);
         jv.beginShape();
 
-        // jv.fill(255, 101, 29);
+        // Draw hex rings
         for(int i = 0; i < 6; i++) {
             // Angle for each vertex
             angle = jv.TWO_PI / 6 * i;
@@ -47,5 +47,7 @@ public class Hex {
 
         jv.endShape(jv.CLOSE);
         jv.popMatrix();
+
+        
     }
 }

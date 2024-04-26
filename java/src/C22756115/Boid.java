@@ -50,7 +50,7 @@ class Boid {
         float minAmp = 0.01f; // Minimum amplitude
         float maxAmp = 1.0f;  // Maximum amplitude
         float minSpeed = 0.0f; // Minimum speed
-        float maxSpeed = 50.0f; // Maximum speed
+        float maxSpeed = 35.0f; // Maximum speed
         float mappedSpeed = jv.map(amplitude, minAmp, maxAmp, minSpeed, maxSpeed);
     
         // Update maxspeed based on the mapped amplitude

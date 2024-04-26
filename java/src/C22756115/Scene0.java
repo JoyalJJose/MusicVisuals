@@ -6,11 +6,15 @@ public class Scene0
 {
     JoyalsVisual jv;
     float halfH;
+    Rain rain;
+    PImage logo;
 
     public Scene0(JoyalsVisual jv)
     {
         this.jv = jv;
         halfH = this.jv.height / 2;
+        rain = new Rain(jv);
+        logo = jv.loadImage("logo.png");
     }
 
     public void render()
@@ -30,10 +34,10 @@ public class Scene0
         
         // Spiderman logo EQ
         float k = jv.map(jv.getSmoothedAmplitude(), 0f, 1f, 0.7f, 1.5f);
-        jv.image(jv.logo, jv.width/2, jv.height/2, 108*6*k, 192*6*k);
+        jv.image(logo, jv.width/2, jv.height/2, 108*6*k, 192*6*k);
         
         // Rain animation
-        jv.rain.render();
+        rain.render();
     }
 
 }

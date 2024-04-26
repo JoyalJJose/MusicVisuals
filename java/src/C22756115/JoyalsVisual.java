@@ -1,31 +1,21 @@
 package C22756115;
 
-import processing.core.PApplet;
 import processing.core.PImage;
 
 public class JoyalsVisual extends ie.tudublin.Visual {
-    PImage spot;
-    PImage logo;
-    PImage sDim;
-    PImage s2w;
     PImage splash;
-    PImage splash2;
     
+    ProgressBar pb;
     Scene0 s0;
     Scene1 s1;
-    Spider sp;
-    ProgressBar pb;
-    Rain rain;
-    Spot spots;
     Scene2 s2;
     Scene3 s3;
+    // Spider sp;
 
     int trackLength;
 
     int scene = 0;
-    int count = 0;
-
-    boolean splashing;
+    int songCount = 0;
 
     public void settings()
     {
@@ -44,9 +34,9 @@ public class JoyalsVisual extends ie.tudublin.Visual {
             }
         }
         if (key == ENTER) { // Change song
-            count = ++count % 2;
+            songCount = ++songCount % 2;
             getAudioPlayer().close();
-            switch (count) {
+            switch (songCount) {
                 case 0:
                     loadAudio("Am I Dreaming.mp3");
                     break;
@@ -92,18 +82,10 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         pb = new ProgressBar(this);
         s0 = new Scene0(this);
         s1 = new Scene1(this);
-        sp = new Spider(this);
-        rain = new Rain(this);
-        spots = new Spot(this);
-        spot = loadImage("spot.png");
-        logo = loadImage("logo.png");
-        sDim = loadImage("spottedDimension.png");
-        s2w = loadImage("scene2.jpeg");
-        splash = loadImage("splash.png");
-        splash2 = loadImage("splash2.png");
-        imageMode(CENTER);
         s2 = new Scene2(this);
         s3 = new Scene3(this);
+        splash = loadImage("splash.png");
+        imageMode(CENTER);
     }
 
     public void draw()
