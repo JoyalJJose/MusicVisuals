@@ -1,11 +1,13 @@
 package C22756115;
 
+import processing.core.*;
+
 public class Raindrop {
     JoyalsVisual jv;
 
     float x, y, z; // Position
     float speed; // Falling speed
-    float length;
+    float length; // Vary speed according to length
 
     Raindrop(JoyalsVisual jv, float x, float y, float z) {
         this.jv = jv;
@@ -27,14 +29,16 @@ public class Raindrop {
     public void tingle() {}
 
     // Make splash effect when hitting ground
-    public void splash() {
-        jv.image(jv.splash, x, y, jv.random(50, 75), jv.random(50, 75));
+    public void splash(PImage splash) {
+        jv.image(splash, x, y, jv.random(50, 75), jv.random(50, 75));
     }
 
+    // Check if touching ground to trigger splash()
     boolean onGround() {
         return y+10 > jv.height;
     }
 
+    // Check if offscreen to re-render
     boolean offScreen() {
         return y-length > jv.height;
     }

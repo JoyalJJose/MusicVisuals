@@ -1,6 +1,7 @@
 package C22756115;
 
 import ie.tudublin.*;
+import processing.core.PApplet;
 
 public class Floor extends Visual {
     JoyalsVisual jv;
@@ -23,7 +24,7 @@ public class Floor extends Visual {
         for (int y = 0; y < cols; y++) {
             float xoff = 0;
             for (int x = 0; x < rows; x++) {
-                terrain[y][x] = jv.map(noise(xoff, yoff), 0, 1, -terrainMax - jv.getSmoothedAmplitude(), terrainMax + jv.getSmoothedAmplitude());
+                terrain[y][x] = PApplet.map(noise(xoff, yoff), 0, 1, -terrainMax - jv.getSmoothedAmplitude(), terrainMax + jv.getSmoothedAmplitude());
                 xoff += 0.4f;
             }
             yoff += 0.4f;   

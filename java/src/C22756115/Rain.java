@@ -1,7 +1,10 @@
 package C22756115;
 
+import processing.core.*;
+
 class Rain {
     JoyalsVisual jv;
+    PImage splash;
 
     int numDrops = 0;
     Raindrop[] drops;
@@ -10,6 +13,7 @@ class Rain {
     Rain(JoyalsVisual jv) {
         this.jv = jv;
         drops = new Raindrop[maxDrops];
+        splash = jv.loadImage("splash.png");
     }
 
     // Create raindrops with random length & position
@@ -32,8 +36,9 @@ class Rain {
               drops[i].y = 0;
               drops[i].x = jv.random(jv.width);
             } 
+            // Trigger splash effect - pass splash image to Raindrop
             else if (drops[i].onGround()) {
-                drops[i].splash();
+                drops[i].splash(splash);
             }
         }
     }

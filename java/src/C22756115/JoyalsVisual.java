@@ -1,16 +1,11 @@
 package C22756115;
 
-import processing.core.PImage;
-
 public class JoyalsVisual extends ie.tudublin.Visual {
-    PImage splash;
-    
     ProgressBar pb;
     Scene0 s0;
     Scene1 s1;
     Scene2 s2;
     Scene3 s3;
-    // Spider sp;
 
     int trackLength;
 
@@ -71,6 +66,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
 
     public void setup()
     {
+        // Minim init & setup
         startMinim();
         loadAudio("Am I Dreaming.mp3");
         getAudioPlayer().play();
@@ -84,7 +80,6 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         s1 = new Scene1(this);
         s2 = new Scene2(this);
         s3 = new Scene3(this);
-        splash = loadImage("splash.png");
         imageMode(CENTER);
     }
 
@@ -105,7 +100,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                 case 0:
                     s0.render();
                     break;
-                // Scene 1 - Spot images
+                // Scene 1 - Spot Dimension EQs
                 case 1:
                     s1.render();
                     break;
@@ -113,7 +108,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                 case 2:
                     s2.render();
                     break;
-                // Scene 3 - Floor & hex
+                // Scene 3 - Floor & hex rings
                 case 3:
                     s3.render();
                 default:

@@ -18,8 +18,8 @@ public class Spider {
     void render() {
         jv.translate(jv.width/2, jv.height/2, 0);
         jv.scale(200);
-        jv.rotateX(jv.PI/4);
-        jv.rotateY(jv.PI);
+        jv.rotateX(PConstants.PI/4);
+        jv.rotateY(PConstants.PI);
         jv.shape(spider);
     }
 }

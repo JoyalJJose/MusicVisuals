@@ -27,8 +27,8 @@ class Boid {
         this.jv = jv;
 
         acceleration = new PVector(0, 0);
-        float angle = jv.random(jv.TWO_PI);
-        velocity = new PVector(jv.cos(angle), jv.sin(angle));
+        float angle = jv.random(PConstants.TWO_PI);
+        velocity = new PVector(PApplet.cos(angle), PApplet.sin(angle));
 
         position = new PVector(x, y);
         r = 2.0f;
@@ -51,7 +51,7 @@ class Boid {
         float maxAmp = 1.0f;  // Maximum amplitude
         float minSpeed = 0.0f; // Minimum speed
         float maxSpeed = 35.0f; // Maximum speed
-        float mappedSpeed = jv.map(amplitude, minAmp, maxAmp, minSpeed, maxSpeed);
+        float mappedSpeed = PApplet.map(amplitude, minAmp, maxAmp, minSpeed, maxSpeed);
     
         // Update maxspeed based on the mapped amplitude
         maxspeed = mappedSpeed;
@@ -114,14 +114,14 @@ class Boid {
 
     void render() {
         // Draw a triangle rotated in the direction of velocity
-        float theta = velocity.heading() + jv.radians(90);
+        float theta = velocity.heading() + PApplet.radians(90);
 
         jv.fill(200, 100);
         jv.stroke(242, 29, 68);
         jv.pushMatrix();
         jv.translate(position.x, position.y);
         jv.rotate(theta);
-        jv.beginShape(jv.TRIANGLES);
+        jv.beginShape(PConstants.TRIANGLES);
         jv.vertex(0, -r * 2);
         jv.vertex(-r, r * 2);
         jv.vertex(r, r * 2);
