@@ -4,7 +4,8 @@ import ie.tudublin.*;
 
 public class Floor extends Visual {
     JoyalsVisual jv;
-    int scl = 30;
+    // int scl = 30;
+    int scl = 15;
     int terrainMax = 50;
     int rows = 5000 / scl;
     int cols = 2000 / scl;
@@ -58,7 +59,7 @@ public class Floor extends Visual {
         jv.translate(-jv.width / 2, -jv.height / 2);
         jv.fill(0);
         jv.stroke(246, 94, 23);
-        jv.strokeWeight(1);
+        jv.strokeWeight(2);
         drawTerrain();
         jv.endShape();
         jv.popMatrix();

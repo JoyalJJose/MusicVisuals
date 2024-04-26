@@ -12,7 +12,7 @@ public class Raindrop {
         this.x = x;
         this.y = y;
         this.z = z;
-        length = jv.random(5, 20);
+        length = jv.random(8, 20);
         // Larger raindrops fall faster
         speed = (float)(jv.random(6, 8) * (length*0.1));
     }

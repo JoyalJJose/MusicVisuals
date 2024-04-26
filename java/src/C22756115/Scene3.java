@@ -23,7 +23,7 @@ public class Scene3 {
         jv.image(s3w, jv.width/2, jv.height/3, (float)(1280*2.5*k), (float)(720*2.5*k));
 
         // Hex rings
-        for (int i=350; i>-100; i-=65) {
+        for (int i=350; i>-200; i-=65) {
             hex.render(i);
         }
 
