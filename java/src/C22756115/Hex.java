@@ -13,11 +13,10 @@ public class Hex {
 
     public void render(int size) {
         jv.colorMode(PConstants.RGB);
-        jv.stroke(239, 0, 107);
-        jv.strokeWeight(7);
         
         float centerX = jv.width / 2;
         float centerY = jv.height / 2;
+
          // Radius of the hexagon based on smoothedAmp
         float radius = PApplet.map(jv.getSmoothedAmplitude()*1000+size, 0, 50, 1, 150);
 
@@ -30,7 +29,12 @@ public class Hex {
         jv.rotate(rotationAngle);
         jv.beginShape();
 
-        // Draw hex rings
+        jv.noFill();
+        jv.strokeWeight(7);
+
+        // Drawing hex rings
+        // Orange rings
+        jv.stroke(239, 0, 107);
         for(int i = 0; i < 6; i++) {
             // Angle for each vertex
             angle = PConstants.TWO_PI / 6 * i;
@@ -39,7 +43,7 @@ public class Hex {
             jv.vertex(x, y);
         }
 
-        jv.noFill();
+        // Blue rings
         jv.stroke(23, 2, 217);
         for(int i = 0; i < 6; i++) {
             angle = PConstants.TWO_PI / 6 * i;
@@ -51,6 +55,24 @@ public class Hex {
         jv.endShape(PConstants.CLOSE);
         jv.popMatrix();
 
+        // Comic book style motion rays
+        jv.pushMatrix();
+        jv.translate(centerX, centerY);
 
+        for (int i=0; i<360; i+=5) {
+            jv.strokeWeight(jv.random(1, 3));
+            jv.stroke(115, 36, 164);
+
+            float startR = jv.random(50, jv.width/2);
+            float endR = startR+jv.random(15, 200);
+
+            float x1 = startR * PApplet.cos(i);
+            float y1 = startR * PApplet.sin(i);
+            float x2 = endR * PApplet.cos(i);
+            float y2 = endR * PApplet.sin(i);
+
+            jv.line(x1, y1, x2, y2);
+        }
+        jv.popMatrix();
     }
 }

@@ -22,7 +22,7 @@ public abstract class Visual extends PApplet
 	private float smoothedAmplitude = 0;
 
 	private float[] lerpedBuffer;
-	private int colour;
+	// private int colour;
 
 	
 	public void startMinim() 
@@ -90,7 +90,6 @@ public abstract class Visual extends PApplet
 	}
 
 	public void setBackgroundColour(int colour) {
-		this.colour = colour;
 		background(colour);
 	}
 
