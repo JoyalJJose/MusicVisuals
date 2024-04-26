@@ -5,8 +5,7 @@ import processing.core.PApplet;
 
 public class Floor extends Visual {
     JoyalsVisual jv;
-    // int scl = 30;
-    int scl = 15;
+    int scl = 20;
     int terrainMax = 50;
     int rows = 5000 / scl;
     int cols = 2000 / scl;

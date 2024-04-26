@@ -55,6 +55,7 @@ public class Hex {
         jv.endShape(PConstants.CLOSE);
         jv.popMatrix();
 
+
         // Comic book style motion rays
         jv.pushMatrix();
         jv.translate(centerX, centerY);

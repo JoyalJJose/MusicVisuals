@@ -19,8 +19,6 @@ public class Scene0
 
     public void render()
     {
-        // jv.image(jv.s1w, jv.width/2, jv.height/2);
-
         // Top horizontal EQ
         jv.colorMode(PApplet.HSB);
         for(int i = 0 ; i < jv.getAudioBuffer().size() ; i++)
