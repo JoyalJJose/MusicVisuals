@@ -64,7 +64,7 @@ public class Hex {
             jv.strokeWeight(jv.random(1, 3));
             jv.stroke(115, 36, 164);
 
-            float startR = jv.random(50, jv.width/2);
+            float startR = jv.random(100, jv.width/2);
             float endR = startR+jv.random(15, 200);
 
             float x1 = startR * PApplet.cos(i);
