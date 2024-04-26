@@ -1,3 +1,8 @@
+/* See "Steering Behaviors For Autonomous Characters" by Craig Reynolds
+    -> Combined Behaviours and Groups
+        -> Flocking
+*/
+
 package C22756115;
 
 import java.util.ArrayList;
@@ -12,15 +17,7 @@ class Boid {
     PVector acceleration;
     float r;
     float maxforce; // Maximum steering force
-    float maxspeed; // Maximum speed
-
-    // String colour;
-    // String hex1 = "#682EC5";
-    // String hex2 = "#4BFCE1";
-    // String hex3 = "#00C2AA";
-    // String hex4 = "#008B76";
-    // static int totalBoids = 0;
-    
+    float maxspeed; // Maximum speed    
 
     Boid (float x, float y, JoyalsVisual jv)
     {
@@ -55,12 +52,6 @@ class Boid {
     
         // Update maxspeed based on the mapped amplitude
         maxspeed = mappedSpeed;
-    
-        // You can also adjust maxforce if needed
-        // float minForce = 0.01;
-        // float maxForce = 0.1;
-        // float mappedForce = jv.map(amplitude, minAmp, maxAmp, minForce, maxForce);
-        // maxforce = mappedForce;
     
         flock(boids);
         update();
