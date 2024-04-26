@@ -74,7 +74,6 @@ public class JoyalsVisual extends ie.tudublin.Visual {
         trackLength = getAudioPlayer().length();
 
         // Instantiate visuals
-        // t = new test(this);
         pb = new ProgressBar(this);
         s0 = new Scene0(this);
         s1 = new Scene1(this);
