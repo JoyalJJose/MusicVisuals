@@ -107,7 +107,7 @@ This causes the boids to move quickly in the more energetic parts of the song wh
 |Scene 0 | All original |
 |Scene 1 | Floor inspired by previous years project |
 |Scene 2 | [Based on Processing Example](https://processing.org/examples/flocking.html) |
-|Scene 3 | Same as above |
+|Scene 3 | Floor part same as above |
 *Note: Anything not mentioned was completely written by myself with no external sources
 
 
