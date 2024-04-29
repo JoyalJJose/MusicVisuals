@@ -100,7 +100,7 @@ This causes the boids to move quickly in the more energetic parts of the song wh
 
 ### Credits:
 
-| Code Section|            Source            |
+| Code Section|            Source  |
 |-------------|------------------------------|
 |Some stuff | Some more stuff in this column |
 |Some stuff | Some more stuff in this column |
