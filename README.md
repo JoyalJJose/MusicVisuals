@@ -13,7 +13,7 @@
 ## Description
 
 This project uses the Processing graphics library and Minim audio library in java to create a set of music visuals for the songs "Am I Dreaming" and "Spot Holes 2 - Epic Version" from the movie "Spider-Man: Across The Spider-Verse".
-It implements 4 scenes that try to capture the themes and feelings from the movie.
+It implements 4 scenes that try to capture the themes and feelings from the movie. See the youtube video showcase of the project below!
 <details>
 <summary>Disclaimer</summary>
 <br>
