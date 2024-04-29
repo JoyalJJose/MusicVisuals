@@ -1,7 +1,7 @@
 # Music Visualiser Project
 
-Name: Joyal Jose
-Student Number: C22756115
+#### Name: Joyal Jose
+#### Student Number: C22756115
 
 <!-- ## Instructions
 - Fork this repository and use it a starter project for your assignment
