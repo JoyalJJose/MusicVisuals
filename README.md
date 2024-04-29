@@ -74,6 +74,7 @@ Scene 2 - Boids simulation;
 	maxspeed = mappedSpeed;
 ```
 This causes the boids to move quickly in the more energetic parts of the song while slowing to almost a complete stop in more quiet parts.
+- Also implemented some code to spawn boids wherever the user clicks the mouse
 
 Scene 3 - Waveform floor, hex portal rings;
 - The waveform floor effect is created using a 2d terrain array that is filled with Perlin noise values. Perlin noise generates smooth, continuous values that are suitable for simulating natural phenomena like terrain elevation. In order to give the terrain its dynamic effect, we map the noise values based on smoothedAmplitude and modify the X and Y offset parameters for noise creation. We then use PShape to draw triangle sections of the terrain by defining its vertices and rendering them in a grid. The final result is a terrain plane in 3d that reacts dynamically to the music.
@@ -87,6 +88,15 @@ Scene 1 - Spot dimension;
 - The black particle noise is created by tiny portal images that are randomly generated and rendered for one frame
 
 # What I am most proud of in the assignment
+
+- The media controls and progress bar are not the focus of the project but they were satisfying to implement and use throughout the project. They definetly helped me to playtest the visuals more efficiently.
+- Learning about and using Boids simulation by Craig Reynolds was very fascinating and mesmerising to watch.
+- Discovering pushMatrix() and popMatrix() to push the current coordinates onto the matrix stack instead of trying to translate back to the centre of the screen was a small epiphany!
+- The combination of the hex rings and comic book motion rays in Scene 3 matched closely my vision for the highly detailed portals from the movie
+
+# YouTube Video Showcasing Visuals
+
+[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
 
 # Markdown Tutorial
 
