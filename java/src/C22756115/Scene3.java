@@ -19,7 +19,7 @@ public class Scene3 {
 
     public void render()
     {
-        // Background image EQ effect
+        // Background image effect
         float k = PApplet.map(jv.getSmoothedAmplitude(), 0f, 1f, 0.7f, 1.5f);
         jv.image(s3w, jv.width/2, jv.height/3, (float)(1280*2.5*k), (float)(720*2.5*k));
 
@@ -28,7 +28,7 @@ public class Scene3 {
             hex.render(i);
         }
 
-        // EQ Floor
+        // Waveform Floor
         f.render();
     }
 

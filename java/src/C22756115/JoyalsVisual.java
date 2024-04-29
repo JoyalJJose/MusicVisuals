@@ -99,7 +99,7 @@ public class JoyalsVisual extends ie.tudublin.Visual {
                 case 0:
                     s0.render();
                     break;
-                // Scene 1 - Spot Dimension EQs
+                // Scene 1 - Spot Dimension
                 case 1:
                     s1.render();
                     break;

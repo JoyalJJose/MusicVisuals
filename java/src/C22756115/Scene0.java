@@ -19,7 +19,7 @@ public class Scene0
 
     public void render()
     {
-        // Top horizontal EQ
+        // Top horizontal waveform
         jv.colorMode(PApplet.HSB);
         for(int i = 0 ; i < jv.getAudioBuffer().size() ; i++)
         {
@@ -30,7 +30,7 @@ public class Scene0
             jv.line(i, 3, i, 3 + Math.abs(jv.getLerpedBuffer()[i]) * halfH * 5f);
         }
         
-        // Spiderman logo EQ
+        // Spiderman logo
         float k = PApplet.map(jv.getSmoothedAmplitude(), 0f, 1f, 0.7f, 1.5f);
         jv.image(logo, jv.width/2, jv.height/2, 108*6*k, 192*6*k);
         

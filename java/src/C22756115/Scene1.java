@@ -31,7 +31,7 @@ public class Scene1 {
         // Spot image noise
         spots.createSpots(100);
 
-        // Central sphere & circular waveform EQ
+        // Central sphere & circular waveform
         jv.translate(jv.width/2, jv.height/2, 0);
         float r1 = 200;
         float r2;
