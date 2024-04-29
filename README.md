@@ -96,7 +96,7 @@ This causes the boids to move quickly in the more energetic parts of the song wh
 
 ## YouTube Video Showcasing Visuals
 
-[![YouTube](https://youtu.be/1Zf1TjC6FBs)]
+[![YouTube](https://img.youtube.com/vi/1Zf1TjC6FBs/0.jpg)](https://youtu.be/1Zf1TjC6FBs)
 
 ### Credits:
 
