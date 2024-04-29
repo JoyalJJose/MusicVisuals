@@ -1,7 +1,6 @@
 # Music Visualiser Project
 
 Name: Joyal Jose
-
 Student Number: C22756115
 
 <!-- ## Instructions
@@ -24,15 +23,15 @@ Note: None of the music and images used in this project are my own and all credi
 # Instructions
 
 Scene Selection;
--Select scene using number keys: 0 -> 3
--(Recommended order is 0 -> 2 -> 3 -> 1 (with Spot theme song))
+- Select scene using number keys: 0 -> 3
+- (Recommended order is 0 -> 2 -> 3 -> 1 (with Spot theme song))
 
 Media Controls;
--Play/Pause: Spacebar
--Seek forwards 5s: Right arrow
--Seek backwards 5s: Left arrow
--Rewind song: Backspace
--Change song: Enter
+- Play/Pause: Spacebar
+- Seek forwards 5s: Right arrow
+- Seek backwards 5s: Left arrow
+- Rewind song: Backspace
+- Change song: Enter
 
 # How it works
 
