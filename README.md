@@ -85,11 +85,11 @@ This causes the boids to move quickly in the more energetic parts of the song wh
 #### Scene 1 - Spot dimension;
 - The central element is made up of a 3D sphere whose radius increases/decreases (and is mapped to a range of values) along with the amplitude of the music. It is surrounded by a circular waveform made up of a series of lines whose endpoints are calculated using polar coordinates.
 - The floor element is the same system that was used in Scene 3 except this time we use noFill() to make it see-through
-- The black particle noise is created by tiny portal images that are randomly generated and rendered for one frame
+- The black particle noise is created by tiny portal images that are randomly generated and rendered each frame
 
 ## What I am most proud of in the assignment
 
-- The media controls and progress bar are not the focus of the project but they were satisfying to implement and use throughout the project. They definetly helped me to playtest the visuals more efficiently.
+- The media controls and progress bar are not the focus of the project but they were satisfying to implement and use throughout the project. They definitely helped me to playtest the visuals more efficiently.
 - Learning about and using Boids simulation by Craig Reynolds was very fascinating and mesmerising to watch.
 - Discovering pushMatrix() and popMatrix() to push the current coordinates onto the matrix stack instead of trying to translate back to the centre of the screen was a small epiphany!
 - The combination of the hex rings and comic book motion rays in Scene 3 matched closely my vision for the highly detailed portals from the movie
@@ -98,7 +98,16 @@ This causes the boids to move quickly in the more energetic parts of the song wh
 
 [![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
 
-# Markdown Tutorial
+### Credits:
+
+| Code Section|            Source            |
+|-------------|------------------------------|
+|Some stuff | Some more stuff in this column |
+|Some stuff | Some more stuff in this column |
+|Some stuff | Some more stuff in this column |
+|Some stuff | Some more stuff in this column |
+
+<!-- # Markdown Tutorial
 
 This is *emphasis*
 
@@ -157,12 +166,11 @@ This is a youtube video:
 
 [![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
 
-Credits:
+Table:
 
 | Heading 1 | Heading 2 |
 |-----------|-----------|
 |Some stuff | Some more stuff in this column |
 |Some stuff | Some more stuff in this column |
 |Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-
+|Some stuff | Some more stuff in this column | -->
