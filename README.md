@@ -100,7 +100,7 @@ This causes the boids to move quickly in the more energetic parts of the song wh
 
 ### Credits:
 
-|Code Section|Source|
+|Code Section|Sources|
 |-------------|------------------------------|
 |Progress Bar | Original |
 |Media Controls | Original |
@@ -108,7 +108,7 @@ This causes the boids to move quickly in the more energetic parts of the song wh
 |Scene 1 | Floor inspired by previous years project |
 |Scene 2 | [Processing Example](https://processing.org/examples/flocking.html) |
 |Scene 3 | Floor inspiration |
-|-------------|-------------------------------|
+|*Note: Anything not mentioned was completely written by myself with no external sources |
 
 
 <!-- # Markdown Tutorial
