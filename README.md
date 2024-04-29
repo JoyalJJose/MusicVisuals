@@ -60,13 +60,32 @@ Scene 2 - Boids simulation;
 	1. Seperate - This maintains seperation between the boids by steering away from nearby boids slightly
 	2. Alignment - This steers the boids towards the average heading of nearby flockmates based on their velocity
 	3. Cohesion - This calculates the average position of all nearby boids and steers towards that position
-- These PVector forces are added together to get the acceleration which is then mapped based on the amplitude of the music. This causes the boids to move quickly in the more energetic parts of the song while slowing to almost a complete stop in more quiet parts.
+- These PVector forces are added together to get the acceleration which is then mapped based on the amplitude of the music. 
+```Java
+float amplitude = jv.getSmoothedAmplitude();
+    
+        // Map the amplitude to adjust speed within a suitable range
+        float minAmp = 0.01f; // Minimum amplitude
+        float maxAmp = 1.0f;  // Maximum amplitude
+        float minSpeed = 0.0f; // Minimum speed
+        float maxSpeed = 35.0f; // Maximum speed
+        float mappedSpeed = PApplet.map(amplitude, minAmp, maxAmp, minSpeed, maxSpeed);
+    
+        // Update maxspeed based on the mapped amplitude
+        maxspeed = mappedSpeed;
+```
+This causes the boids to move quickly in the more energetic parts of the song while slowing to almost a complete stop in more quiet parts.
 
 Scene 3 - Waveform floor, hex portal rings;
-- 
+- The waveform floor effect is created using a 2d terrain array that is filled with Perlin noise values. Perlin noise generates smooth, continuous values that are suitable for simulating natural phenomena like terrain elevation. In order to give the terrain its dynamic effect, we map the noise values based on smoothedAmplitude and modify the X and Y offset parameters for noise creation. We then use PShape to draw triangle sections of the terrain by defining its vertices and rendering them in a grid. The final result is a terrain plane in 3d that reacts dynamically to the music.
+- The hex rings are drawn by calculating 6 points on an imaginary circle and connecting them using vertices. The radius for the calculation is modified according to the music.
+- The comic book style motion rays are made up lines that are drawn radially from the centre of the screen from a random starting radius and of random length. This creates an alternating line effect inspired by old comics.
+- The background image also moves according to the music and in combination with the hex portal rings provide a nice effect
 
 Scene 1 - Spot dimension;
-- The central element is made up of a 3D sphere whose radius increases/decreases (and is mapped to a range of values) along with the amplitude of the music. It is surrounded by a circular waveform made up of a series of lines whose endpoints are calculated using polar coordinates. 
+- The central element is made up of a 3D sphere whose radius increases/decreases (and is mapped to a range of values) along with the amplitude of the music. It is surrounded by a circular waveform made up of a series of lines whose endpoints are calculated using polar coordinates.
+- The floor element is the same system that was used in Scene 3 except this time we use noFill() to make it see-through
+- The black particle noise is created by tiny portal images that are randomly generated and rendered for one frame
 
 # What I am most proud of in the assignment
 
@@ -129,7 +148,7 @@ This is a youtube video:
 
 [![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
 
-This is a table:
+Credits:
 
 | Heading 1 | Heading 2 |
 |-----------|-----------|
