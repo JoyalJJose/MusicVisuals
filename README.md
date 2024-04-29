@@ -62,17 +62,17 @@ Scene 2 - Boids simulation;
 	3. Cohesion - This calculates the average position of all nearby boids and steers towards that position
 - These PVector forces are added together to get the acceleration which is then mapped based on the amplitude of the music. 
 ```Java
-float amplitude = jv.getSmoothedAmplitude();
-    
-        // Map the amplitude to adjust speed within a suitable range
-        float minAmp = 0.01f; // Minimum amplitude
-        float maxAmp = 1.0f;  // Maximum amplitude
-        float minSpeed = 0.0f; // Minimum speed
-        float maxSpeed = 35.0f; // Maximum speed
-        float mappedSpeed = PApplet.map(amplitude, minAmp, maxAmp, minSpeed, maxSpeed);
-    
-        // Update maxspeed based on the mapped amplitude
-        maxspeed = mappedSpeed;
+	float amplitude = jv.getSmoothedAmplitude();
+
+	// Map the amplitude to adjust speed within a suitable range
+	float minAmp = 0.01f; // Minimum amplitude
+	float maxAmp = 1.0f;  // Maximum amplitude
+	float minSpeed = 0.0f; // Minimum speed
+	float maxSpeed = 35.0f; // Maximum speed
+	float mappedSpeed = PApplet.map(amplitude, minAmp, maxAmp, minSpeed, maxSpeed);
+
+	// Update maxspeed based on the mapped amplitude
+	maxspeed = mappedSpeed;
 ```
 This causes the boids to move quickly in the more energetic parts of the song while slowing to almost a complete stop in more quiet parts.
 
